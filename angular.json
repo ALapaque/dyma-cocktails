@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cocktails"
+    }
+  },
+  "defaultProject": "cocktails",
+  "cli": {
+    "analytics": false
+  }
 }
