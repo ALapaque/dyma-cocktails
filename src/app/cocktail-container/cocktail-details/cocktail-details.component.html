@@ -1,3 +1,4 @@
+<div *ngIf="cocktail">
 <div class="row">
     <div class="col-4">
         <img class="img-fluid" style="max-height: 150px" [src]="cocktail.img" [alt]="cocktail.name" />
@@ -23,4 +24,5 @@
 <div class="row">
     <button class="btn btn-success" [routerLink]="getUrl()">Modifier</button>
     <button class="btn btn-secondary ml-auto mr-3" (click)="addToCart(cocktail.ingredients)">Acheter</button>
+</div>
 </div>
