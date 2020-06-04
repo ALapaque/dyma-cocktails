@@ -1,8 +1,6 @@
-<div class="container-fluid">
-    <div class="row">
-        <app-cocktails-list class="col-5"></app-cocktails-list>
-        <div class="col-7">
-            <router-outlet></router-outlet>
-        </div>
+<div fxLayout="row nowrap" fxLayoutAlign="space-around start">
+    <app-cocktails-list fxFlex="20%"></app-cocktails-list>
+    <div fxFlex="65%">
+        <router-outlet></router-outlet>
     </div>
 </div>

@@ -40,6 +40,7 @@ export class CocktailService {
     const cocktails = this.cocktails.value.slice();
     cocktails.push(new Cocktail(cocktail.name, cocktail.img, cocktail.description, cocktail.ingredients.map(ingredient => new Ingredient(ingredient.name, ingredient.quantity))));
     this.cocktails.next(cocktails);
+    this._saveCocktais(this.cocktails.value).subscribe();
   }
 
   editCocktail(cocktailEdited: Cocktail): void {
@@ -47,5 +48,10 @@ export class CocktailService {
     const index = cocktails.findIndex(c => c.name === cocktailEdited.name);
     cocktails[index] = cocktailEdited;
     this.cocktails.next(cocktails);
+    this._saveCocktais(this.cocktails.value).subscribe();
+  }
+
+  private _saveCocktais(cocktails: Cocktail[]): Observable<Cocktail[]> {
+    return this._httpClient.put<Cocktail[]>('https://dyma-cocktails-efd27.firebaseio.com/cocktails.json', cocktails);
   }
 }
