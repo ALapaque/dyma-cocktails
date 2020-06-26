@@ -1,14 +1,4 @@
-import { NgModule } from '@angular/core';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { CocktailsListComponent } from './cocktails-list/cocktails-list.component';
-import { CocktailDetailsComponent } from './cocktail-details/cocktail-details.component';
-import { CocktailContainerComponent } from './cocktail-container.component';
-import { CocktailEditComponent } from './cocktail-edit/cocktail-edit.component';
-import { FilterPipe } from '../shared/pipes/filter.pipe';
-import { CocktailRouting } from './cocktail.routing';
-import { SharedModule } from '../shared/modules/shared.module';
-
-
+import { NgModule }                  from '@angular/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
@@ -43,69 +33,50 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DragDropModule }            from '@angular/cdk/drag-drop';
 
-const components = [
-    CocktailsListComponent,
-    CocktailDetailsComponent,
-    CocktailContainerComponent,
-    CocktailEditComponent,
-];
-
 const modules = [
-    MatAutocompleteModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSlideToggleModule,
-    MatSliderModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatStepperModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatProgressSpinnerModule,
-    MatExpansionModule,
-    MatRippleModule,
-    MatTooltipModule,
-    MatBottomSheetModule,
-    DragDropModule,
-  ];
-
-const directives = [];
-
-const pipes = [
-    FilterPipe,
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSlideToggleModule,
+  MatSliderModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatProgressSpinnerModule,
+  MatExpansionModule,
+  MatRippleModule,
+  MatTooltipModule,
+  MatBottomSheetModule,
+  DragDropModule,
 ];
 
 @NgModule({
-    declarations: [
-        ...components,
-        ...directives,
-        ...pipes
-    ],
-    imports: [
-        SharedModule,
-        ReactiveFormsModule,
-        FormsModule,
-        CocktailRouting,
-        ...modules
-    ],
-    providers: [],
-    exports: [],
+  imports: [
+    ...modules,
+  ],
+  exports: [
+    ...modules,
+  ],
+  declarations: []
 })
-export class CocktailModule{}
+export class CustomMaterialModule {
+}

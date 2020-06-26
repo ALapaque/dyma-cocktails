@@ -3,6 +3,8 @@ import { HeaderComponent } from 'src/app/header/header.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CustomMaterialModule } from './custom-material.module';
+
 
 const components = [
     HeaderComponent,
@@ -15,12 +17,14 @@ const components = [
     imports: [
         CommonModule,
         RouterModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        CustomMaterialModule,
     ],
     exports: [
         HeaderComponent,
         CommonModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        CustomMaterialModule
     ],
 })
 export class SharedModule {}

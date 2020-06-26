@@ -11,6 +11,8 @@ import { AppRouting } from './app.routing';
 import { CocktailModule } from './cocktail-container/cocktail.module';
 import { SharedModule } from './shared/modules/shared.module';
 
+
+
 const components = [
   AppComponent,
 ];
@@ -18,6 +20,8 @@ const components = [
 const directives = [
   ActiveDirective
 ];
+
+
 
 const pipes = [];
 
