@@ -10,7 +10,7 @@
 <hr>
 <div class="row">
     <ul class="col-12 list-group">
-        <li class="list-group-item" *ngFor="let ingredient of ingredients">
+        <li class="list-group-item" *ngFor="let ingredient of ingredients" [contextMenu]="listContext">
             {{ ingredient.name }}
             <span class="badge badge-info badge-pill ml-auto">
                 {{ ingredient.quantity }}
@@ -33,3 +33,9 @@
 <mat-menu #panierMenu="matMenu">
     <button mat-menu-item>Vider la panier</button>
 </mat-menu>
+
+<context-menu #listContext>
+    <ng-template contextMenuItem>
+        <mat-icon>edit</mat-icon>
+    </ng-template>
+</context-menu>
