@@ -6,7 +6,7 @@ import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
 @Component({
   selector: 'app-cocktails-list',
   templateUrl: './cocktails-list.component.html',
-  styleUrls: ['./cocktails-list.component.css'],
+  styleUrls: ['./cocktails-list.component.scss'],
   providers: [
     FilterPipe,
   ]

@@ -37,6 +37,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DragDropModule }            from '@angular/cdk/drag-drop';
+import { ContextMenuModule } from 'ngx-contextmenu';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const components = [
     PanierComponent,
@@ -91,6 +93,8 @@ const pipes =  [];
     ],
     imports: [
         CommonModule,
+        ContextMenuModule.forRoot({useBootstrap4: true}),
+        FlexLayoutModule,
         PanierRouting,
         ...modules,
     ],

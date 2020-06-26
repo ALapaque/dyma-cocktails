@@ -7,7 +7,7 @@ import { Cocktail } from 'src/app/shared/models/cocktail.model';
 @Component({
   selector: 'app-cocktail-edit',
   templateUrl: './cocktail-edit.component.html',
-  styleUrls: ['./cocktail-edit.component.css']
+  styleUrls: ['./cocktail-edit.component.scss']
 })
 export class CocktailEditComponent implements OnInit {
   public cocktailForm: FormGroup;

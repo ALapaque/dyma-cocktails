@@ -42,6 +42,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DragDropModule }            from '@angular/cdk/drag-drop';
+import { ContextMenuModule } from 'ngx-contextmenu';
 
 const components = [
     CocktailsListComponent,
@@ -102,6 +103,7 @@ const pipes = [
         SharedModule,
         ReactiveFormsModule,
         FormsModule,
+        ContextMenuModule.forRoot( {useBootstrap4: true} ),
         CocktailRouting,
         ...modules
     ],

@@ -2,7 +2,13 @@
     <div class="list-group col-12">
         <input type="text" class="form-control" placeholder="Chercher un cocktail ..." [(ngModel)]="search" />
         <hr>
-        <a [routerLink]="[index]" routerLinkActive="active" (click)="selectCocktail(cocktail)" *ngFor="let cocktail of cocktails | filter: search; let index = index" class="list-group-item list-group-action">
+        <a [routerLink]="[index]"
+        routerLinkActive="active"
+        (click)="selectCocktail(cocktail)"
+        *ngFor="let cocktail of cocktails | filter: search; let index = index"
+        class="list-group-item list-group-action"
+        [contextMenu]="listMenu"
+        [contextMenuSubject]="cocktail">
             {{ cocktail.name }}
         </a>
     </div>
@@ -15,3 +21,17 @@
         </button>
     </div>
 </div>
+
+
+<!-- List contextMenu -->
+<context-menu #listMenu>
+    <ng-template contextMenuItem>
+        <span>Modifier</span>
+        <mat-icon>edit</mat-icon>
+    </ng-template>
+    <ng-template contextMenuItem divider="true"></ng-template>
+    <ng-template contextMenuItem let-item>
+        <span>Supprimer</span>
+        <mat-icon>delete</mat-icon>
+    </ng-template>
+</context-menu>

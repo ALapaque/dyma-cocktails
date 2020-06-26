@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CustomMaterialModule } from './custom-material.module';
+import { ContextMenuModule } from 'ngx-contextmenu';
+
 
 
 const components = [
@@ -19,12 +21,13 @@ const components = [
         RouterModule,
         FlexLayoutModule,
         CustomMaterialModule,
+        ContextMenuModule.forRoot({'useBootstrap4': true}),
     ],
     exports: [
         HeaderComponent,
         CommonModule,
         FlexLayoutModule,
-        CustomMaterialModule
+        CustomMaterialModule,
     ],
 })
 export class SharedModule {}

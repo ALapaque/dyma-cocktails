@@ -9,7 +9,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-cocktail-details',
   templateUrl: './cocktail-details.component.html',
-  styleUrls: ['./cocktail-details.component.css']
+  styleUrls: ['./cocktail-details.component.scss']
 })
 export class CocktailDetailsComponent implements OnInit {
   public cocktail: Cocktail;

@@ -1,0 +1,62 @@
+@import '~@angular/material/theming';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// **Be sure that you only ever include this mixin once!**
+@include mat-core();
+
+// THEME config
+
+body {
+  // primary
+  --primary-color: #9c27b0;
+  --primary-lighter-color: #e1bee7;
+  --primary-darker-color: #801797;
+  --text-primary-color: #{$light-primary-text};
+  --text-primary-lighter-color: #{$dark-primary-text};
+  --text-primary-darker-color: #{$light-primary-text};
+
+  // accent
+  --accent-color: #2979ff;
+  --accent-lighter-color: #bfd7ff;
+  --accent-darker-color: #195cff;
+  --text-accent-color: #{$light-primary-text};
+  --text-accent-lighter-color: #{$dark-primary-text};
+  --text-accent-darker-color: #{$light-primary-text};
+
+  // warn
+  --warn-color: #ff0000;
+  --warn-lighter-color: #ffb3b3;
+  --warn-darker-color: #ff0000;
+  --text-warn-color: #{$light-primary-text};
+  --text-warn-lighter-color: #{$dark-primary-text};
+  --text-warn-darker-color: #{$light-primary-text};
+}
+
+@import './colors.scss';
+
+@import './theme/light/light-theme-colors.scss';
+@import './theme/dark/dark-theme-colors.scss';
+
+// default theme
+$default-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+.default-theme {
+  @include angular-material-theme($default-theme);
+
+
+  // Import dark theme with colors
+  @import './theme/light/light-theme.scss';
+}
+
+// dark theme
+$dark-theme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+
+  // Import dark theme with colors
+  @import './theme/dark/dark-theme.scss';
+}
+
+// Theme Init default theme
+@include angular-material-theme($default-theme);
+

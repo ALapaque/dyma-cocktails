@@ -1,13 +1,28 @@
-<nav class="navbar navbar-expand-md navbar-light">
-    <a class="navbar-brand" [routerLink]="['/cocktails']">Cocktails</a>
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" [routerLink]="['/cocktails']">Cocktails</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" [routerLink]="['/panier']">Panier</a>
-            </li>
-        </ul>
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+        <button mat-mini-fab
+                class="mr-2"
+                color="primary"
+                aria-label="Example icon button with a menu icon"
+                [matMenuTriggerFor]="headerMenu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <a class="navbar-brand" [routerLink]="['/cocktails']">Cocktails</a>
     </div>
-</nav>
+    <mat-slide-toggle matTooltip="Changer de thème"
+                        (click)="toggleTheme()">
+    </mat-slide-toggle>
+</mat-toolbar>
+
+<mat-menu #headerMenu="matMenu">
+    <a mat-menu-item
+        routerLinkActive="active"
+        [routerLink]="['/cocktails']">
+        Cocktails
+    </a>
+    <a  mat-menu-item
+        routerLinkActive="active"
+        [routerLink]="['/panier']">
+        Panier
+    </a>
+</mat-menu>
